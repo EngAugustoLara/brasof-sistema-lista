@@ -18,11 +18,11 @@ jobs:
       - name: Install deps
         run: |
           python -m pip install --upgrade pip
-          pip install pyinstaller openpyxl pandas
+          pip install pyinstaller pandas openpyxl
 
-      - name: Build EXE
+      - name: Build (no spaces in name)
         run: |
-          pyinstaller --onefile --noconsole --name "Sistema Lista BraSoft" sistema_lista_brasoft.py
+          pyinstaller --onefile --noconsole --name Sistema_Lista_Brasoft sistema_lista_brasoft.py
 
       - name: List dist contents (debug)
         run: |
@@ -31,5 +31,5 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Sistema_Lista_BraSoft_EXE
-          path: dist/*.exe
+          name: Sistema_Lista_Brasoft_EXE
+          path: dist/Sistema_Lista_Brasoft.exe
